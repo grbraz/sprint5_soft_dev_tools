@@ -7,12 +7,12 @@ df_car = pd.read_csv('vehicles.csv') # leitura do conjunto de dados de veículos
 st.header('US Vehicle Data')
 
 #Criando a caixa de seleção
-opt1_hist = st.checkbox('Create a histogram')
-opt2_scat = st.checkbox('Create a scatter chart')
+opt1_hist = st.checkbox('Criar um histograma')
+opt2_scat = st.checkbox('Criar um gráfico de dispersão')
 
 if opt1_hist: # caso esta opção seja selecionada
     #informando ao usuário o tipo de gráfico e a informação que será apresentada
-    st.write('The histogram presents a count of vehicles with similar mileage')
+    st.write('O histograma abaixo apresenta a relação de veículos com quilometragens similares.')
 
     #criação do gráfico histograma
     hist_chart = px.histogram(df_car, x='odometer')
@@ -22,7 +22,7 @@ if opt1_hist: # caso esta opção seja selecionada
 
 if opt2_scat: # caso esta opção seja selecionada
     #informando ao usuário o tipo de gráfico e a informação que será apresentada
-    st.write('The scatter chart presents the ratio between model year and mileage')
+    st.write('O gráfico de dispersão abaixo apresenta a razão entre o modelo dos veículos e suas respectivas quilometragens')
 
     #criação do gráfico de dispersão
     scat_chart = px.scatter(df_car, x='model_year', y='odometer')
